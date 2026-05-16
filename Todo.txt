@@ -16,9 +16,9 @@
     - Deployment
     
 4. Database Design & Testing
-    - Application Features & Requirement Listing
-    - Data Flow Diagram (DFD)
-    - User Journey & Technical Flow
+    - Application Features & Requirement Listing (Completed)
+    - Data Flow Diagram (DFD) (Completed)
+    - User Journey & Technical Flow (Completed)
     - Database Schema Planning
     - ERD Diagram & Relationship
     - Write Table SQL Database Design Language (DDL)
