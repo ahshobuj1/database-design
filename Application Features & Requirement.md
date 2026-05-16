@@ -1,4 +1,4 @@
-# Project: Multi-Tenant SaaS DJ Platform (DevScout)
+# Project: Multi-Tenant SaaS DJ Platform
 
 ## System Design & Requirements Analysis
 

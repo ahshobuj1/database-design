@@ -1,0 +1,447 @@
+Multi-Tenant SaaS DJ Platform
+Software Requirements & Feature Analysis Document
+1. Project Overview
+Project Name
+
+Multi-Tenant SaaS DJ Platform
+
+Project Type
+
+Software as a Service (SaaS) Web Application
+
+Business Goal
+
+This platform allows DJs to create and manage their own professional portfolio websites, receive booking requests, collect payments, and manage events through a subscription-based SaaS platform.
+
+Each DJ will have:
+
+Their own dashboard
+Subscription management
+Customizable portfolio website
+Booking management
+Payment collection
+Invoice tracking
+
+The SaaS owner (Super Admin) will manage:
+
+All users
+Subscription plans
+Payments
+Themes
+Invoices
+Platform settings
+2. Core Business Concept
+
+The platform works as follows:
+
+A DJ visits the main landing page.
+The DJ registers and creates an account.
+The DJ subscribes to a paid plan via Stripe.
+After subscribing, the DJ accesses a private dashboard.
+The DJ selects one of the available portfolio themes.
+The DJ customizes the selected theme.
+The DJ adds mixtapes and events.
+The DJ publishes their portfolio website.
+The portfolio becomes live on a unique subdomain.
+Clients visit the portfolio and submit booking requests.
+The DJ manages booking requests.
+The DJ sends payment links to clients.
+Clients pay online or choose cash payment.
+The DJ tracks invoices and payment statuses.
+3. User Roles
+3.1 Super Admin
+
+Platform owner who manages the entire SaaS system.
+
+3.2 DJ User (Tenant)
+
+A subscribed customer who uses the platform.
+
+3.3 Client / Customer
+
+Visitors who book DJs.
+
+4. Multi-Tenant Architecture
+
+Each DJ account is a separate tenant.
+
+Each tenant has isolated data for:
+
+Profile
+Theme configuration
+Mixtapes
+Events
+Bookings
+Payment settings
+Invoices
+
+Example:
+
+djname.yourplatform.com
+shobujdj.yourplatform.com
+5. Public Website
+5.1 Main Landing Page
+
+Public marketing website.
+
+Sections
+Hero
+Features
+Pricing
+Testimonials
+FAQ
+Contact
+Login
+Register
+6. Authentication Module
+Features
+User registration
+Email verification
+Login
+Logout
+Forgot password
+Reset password
+Change password
+Session management
+7. Subscription & Billing Module
+Payment Gateway
+
+Stripe
+
+Features
+Subscription plans
+Checkout
+Upgrade / downgrade
+Cancel subscription
+Auto-renew
+Trial support (optional)
+Billing history
+Webhook synchronization
+Subscription Status
+Trial
+Active
+Past Due
+Canceled
+Expired
+8. DJ Dashboard
+Dashboard Widgets
+Subscription overview
+Portfolio status
+Booking statistics
+Upcoming events
+Revenue summary
+Recent invoices
+9. Theme Management Module
+Features
+Two predefined themes
+Theme selection
+Theme switching
+Theme preview
+Theme customization
+Customizable Fields
+Logo
+DJ Name
+Tagline
+Hero title
+Hero subtitle
+About section
+Contact details
+Social media links
+Primary colors
+Background images
+10. Portfolio Website Module
+
+Each DJ receives a live portfolio website.
+
+URL Structure
+Subdomain-based URL
+Custom domain support (future)
+Sections
+Hero
+About
+Mixtapes
+Events
+Gallery (optional)
+Contact
+Book Now
+11. Mixtape Management Module
+Features
+Create mixtape
+Update mixtape
+Delete mixtape
+Reorder mixtapes
+Publish / unpublish
+Mixtape Fields
+Title
+Cover image/avatar
+Audio URL
+Description
+Genre
+Duration
+Sort order
+Supported Audio Sources
+SoundCloud
+Mixcloud
+YouTube
+12. Event Management Module
+Features
+Create event
+Edit event
+Delete event
+Publish / unpublish
+Event Fields
+Title
+Description
+Date
+Start time
+End time
+Venue
+Address
+Ticket URL
+Featured image
+13. Booking Module
+Public Booking Form
+
+Available on the portfolio website.
+
+Booking Fields
+Client name
+Email
+Phone
+Event type
+Event date
+Event location
+Number of guests
+Budget
+Additional notes
+Booking Status
+Pending
+Accepted
+Rejected
+Payment Requested
+Partially Paid
+Paid
+Completed
+Cancelled
+14. Payment Collection Module
+Payment Methods
+Online Payment
+
+DJ sends a secure Stripe payment link to the client via email.
+
+Cash on Event
+
+Client pays in person. DJ manually marks payment as completed.
+
+Features
+Generate payment request
+Send payment email
+Track payment status
+Partial payment support (optional)
+15. Invoice Management Module
+Invoice Types
+Subscription invoices
+Booking invoices
+Invoice Status
+Draft
+Sent
+Paid
+Pending
+Overdue
+Cancelled
+Visibility
+Super Admin Can View
+All subscription invoices
+All booking invoices
+All tenant revenues
+DJ User Can View
+Their subscription invoices
+Their booking invoices
+16. Email Notification Module
+Email Types
+Welcome email
+Email verification
+Subscription confirmation
+Booking request notification
+Payment request email
+Payment confirmation
+Booking completed
+Invoice email
+17. Subdomain Management
+Features
+Automatic subdomain creation
+Subdomain uniqueness validation
+SSL support
+Routing to tenant portfolio
+
+Example:
+
+djalex.platform.com
+18. Super Admin Panel
+User Management
+View all DJs
+Suspend users
+Activate users
+Delete users
+Subscription Management
+Create plans
+Update plans
+View active subscriptions
+Theme Management
+Manage themes
+Financial Dashboard
+Total revenue
+Monthly recurring revenue
+Failed payments
+Platform Settings
+Branding
+Email settings
+Stripe configuration
+Domain settings
+19. DJ Settings Module
+Profile Settings
+Name
+Email
+Phone
+Bio
+Profile photo
+Payment Settings
+Stripe Connect / payout settings (future)
+Portfolio Settings
+Subdomain
+SEO settings
+20. Analytics Module (Optional MVP+)
+DJ Analytics
+Portfolio views
+Booking conversion rate
+Revenue summary
+Admin Analytics
+Total tenants
+Active subscriptions
+Churn rate
+21. File Upload Module
+Supported Uploads
+Logos
+Images
+Cover art
+Storage Options
+Amazon Web Services S3
+Cloudflare R2
+Vercel Blob
+22. Search Engine Optimization
+SEO Features
+Meta title
+Meta description
+Open Graph tags
+Sitemap
+Robots.txt
+23. Audit Logging
+
+Track critical actions:
+
+Login
+Subscription changes
+Theme updates
+Booking updates
+Payment changes
+24. API Integrations
+Stripe
+SMTP provider (e.g. Resend or SendGrid)
+Cloud storage provider
+25. Database Core Entities
+Users
+Tenants
+Subscription Plans
+Subscriptions
+Themes
+Theme Configurations
+Mixtapes
+Events
+Bookings
+Payment Requests
+Payments
+Invoices
+Email Logs
+Audit Logs
+26. Recommended Technology Stack
+Backend
+Node.js
+Express.js
+TypeScript
+Prisma
+PostgreSQL
+Frontend
+Next.js
+Hosting
+Vercel
+Railway
+Neon
+27. MVP Scope
+Included in MVP
+Authentication
+Subscription system
+Theme selection
+Theme customization
+Portfolio website
+Mixtape management
+Event management
+Booking requests
+Payment requests
+Stripe integration
+Invoice management
+Super Admin dashboard
+Subdomain support
+Excluded from MVP
+Custom domains
+Advanced analytics
+Mobile apps
+Payout automation
+28. Security Requirements
+Password hashing
+JWT or secure sessions
+Role-based access control
+Tenant data isolation
+Webhook signature verification
+Rate limiting
+CSRF protection
+Input validation
+29. Non-Functional Requirements
+Performance
+Dashboard loads in under 2 seconds
+Availability
+99.9% uptime target
+Scalability
+Support thousands of tenants
+Maintainability
+Modular architecture
+30. Suggested Development Phases
+Phase 1: Foundation
+Authentication
+Tenant architecture
+Admin panel
+Subscription system
+Phase 2: Portfolio Builder
+Theme selection
+Theme customization
+Subdomain routing
+Phase 3: Content Management
+Mixtapes
+Events
+Phase 4: Booking System
+Booking requests
+Payment requests
+Phase 5: Billing & Invoices
+Stripe integration
+Invoice module
+Phase 6: Testing & Deployment
+QA
+Production deployment
+31. Success Criteria
+
+The platform is considered successful when:
+
+DJs can subscribe and manage their own portfolio websites.
+Clients can submit booking requests.
+DJs can send payment links and collect payments.
+Invoices are automatically generated and tracked.
+Super Admin can monitor all tenants and revenues.
