@@ -1,0 +1,28 @@
+1. Tools
+    - MYSQL
+    - AI -> Antigravity
+    - GUI (VS Code)
+    - ERD Evaluate (DataGrip)
+    - Diagrams.net (Online tool)
+
+2. Sofware Development Approaches
+    - Backend First Approach
+    - Frontend First Approach
+
+3. Backend first Development (BFD)
+    - Database
+    - API 
+    - Postman
+    - Deployment
+    
+4. Database Design & Testing
+    - Application Features & Requirement Listing
+    - Data Flow Diagram (DFD)
+    - User Journey & Technical Flow
+    - Database Schema Planning
+    - ERD Diagram & Relationship
+    - Write Table SQL Database Design Language (DDL)
+    - Execute (DDL)
+    - Prepare Test Data (DQL)
+    - Execute Test Data (DQL)
+    - Evaluate Database Tables Keys And Relationship
