@@ -20,8 +20,8 @@
     - Data Flow Diagram (DFD) (Completed) ✅
     - User Journey & Technical Flow (Completed) ✅
     - Database Schema Planning (Completed) ✅
-    - ERD Diagram & Relationship
-    - Write Table SQL Database Design Language (DDL)
+    - ERD Diagram & Relationship (Completed) ✅
+    - Write Table SQL Database Design Language (DDL) (Completed) ✅
     - Execute (DDL)
     - Prepare Test Data (DQL)
     - Execute Test Data (DQL)
