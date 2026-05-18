@@ -22,7 +22,7 @@
     - Database Schema Planning (Completed) ✅
     - ERD Diagram & Relationship (Completed) ✅
     - Write Table SQL Database Design Language (DDL) (Completed) ✅
-    - Execute (DDL)
-    - Prepare Test Data (DQL)
-    - Execute Test Data (DQL)
+    - Execute (DDL) (Completed) ✅
+    - Prepare Test Data (DQL) (Completed) ✅
+    - Execute Test Data (DQL) (Completed) ✅
     - Evaluate Database Tables Keys And Relationship
