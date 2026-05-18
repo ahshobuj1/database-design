@@ -13,10 +13,40 @@ CREATE TYPE "event_status" AS ENUM (
   'upcoming',
   'completed',
   'canceled'
-););
-;
-;
-;
+);
+
+CREATE TYPE "booking_status" AS ENUM (
+  'pending',
+  'accepted',
+  'completed'
+);
+
+CREATE TYPE "invoice_type" AS ENUM (
+  'SUBSCRIPTION',
+  'BOOKING'
+);
+
+CREATE TYPE "invoice_method" AS ENUM (
+  'STRIPE',
+  'CASH'
+);
+
+CREATE TYPE "invoice_payment_status" AS ENUM (
+  'paid',
+  'unpaid'
+);
+
+CREATE TYPE "ticket_status" AS ENUM (
+  'open',
+  'in_progress',
+  'resolved'
+);
+
+CREATE TYPE "notification_type" AS ENUM (
+  'booking_request',
+  'payment',
+  'system'
+);
 ;
 
 CREATE TYPE "booking_status" AS ENUM (
