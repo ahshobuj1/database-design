@@ -12,8 +12,12 @@ CREATE TYPE "subscription_status" AS ENUM (
 CREATE TYPE "event_status" AS ENUM (
   'upcoming',
   'completed',
-  'cancelled'
-);
+  'canceled'
+););
+;
+;
+;
+;
 
 CREATE TYPE "booking_status" AS ENUM (
   'pending',
@@ -52,15 +56,15 @@ CREATE TABLE "users" (
     "id" UUID PRIMARY KEY,
     "first_name" VARCHAR(255),
     "last_name" VARCHAR(255),
-    "email" VARCHAR(255) UNIQUE,
-    "password" VARCHAR(255),
-    "role" user_role,
+    "email" VARCHAR(255) UNIQUE NOT NULL,
+    "password" VARCHAR(255) NOT NULL,
+    "role" user_role NOT NULL,
     "profile_img" VARCHAR(255),
-    "is_verified" BOOLEAN,
+    "is_verified" BOOLEAN DEFAULT false,
     "otp" VARCHAR(255),
     "otp_expiry" TIMESTAMP,
-    "created_at" TIMESTAMP,
-    "updated_at" TIMESTAMP
+    "created_at" TIMESTAMP DEFAULT NOW(),
+    "updated_at" TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE "themes" (
@@ -170,7 +174,7 @@ CREATE TABLE "invoices" (
 
 CREATE TABLE "webhook_events" (
     "id" UUID PRIMARY KEY,
-    "stripe_event_id" VARCHAR(255),
+    "stripe_event_id" VARCHAR(255) UNIQUE NOT NULL,
     "type" VARCHAR(255),
     "status" VARCHAR(255),
     "created_at" TIMESTAMP

@@ -25,4 +25,4 @@
     - Execute (DDL) (Completed) ✅
     - Prepare Test Data (DQL) (Completed) ✅
     - Execute Test Data (DQL) (Completed) ✅
-    - Evaluate Database Tables Keys And Relationship
+    - Evaluate Database Tables Keys And Relationship (Completed) ✅
